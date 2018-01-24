@@ -3,11 +3,15 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { HotelsListComponent } from './hotels-list/hotels-list.component';
+import { HeaderComponent } from './common/header/header.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HotelsListComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule
