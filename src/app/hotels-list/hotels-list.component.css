@@ -1,3 +1,39 @@
-.feature-col {
-    padding-left: 1em;
- }
+h6 {
+    color: #157AB1;
+    font-weight: bolder;
+}
+
+.button{
+    background-color: #144481
+}
+
+.l-button {
+    text-align: center;
+}
+
+.p-small {
+    padding-top: 1em;
+    color: #444444;
+    font-size: 13px;
+    text-align: center;
+}
+
+.l-mount {
+    color: #DF6800;
+    text-align: left;
+    font-weight: 70px;
+    font-size: 35px;
+    font-family: 'Georgia';
+    
+    padding-right: 4em;
+}
+
+.l-price {
+    color: #DF6800;
+    text-align: right;
+    font-weight: 55px;
+    font-size: 26px;
+    font-family: 'Georgia';
+    font-stretch: ultra-condensed;
+    padding-top: 7px;
+}

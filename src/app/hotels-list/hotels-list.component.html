@@ -1,89 +1,29 @@
-<div class="medium-grid-frame">
-  <div class="cell medium-auto medium-cell-block-container">
-    <div class="grid-x grid-padding-x">
-      <div class="cell medium-4 grid-padding-y grid-padding-x">
+
+    <!-- <div *ngFor="let hotel of hotels">
+        {{hotel.name}}
+    </div> -->
+
+<div *ngFor="let hotel of hotels" class="tabs-panel is-active" id="panelHotelList">
+  <div class="media-object">
+    <div class="media-object-section middle">
+        <img class="thumbnail" src="../../assets/images/hotels/{{hotel.image}}">
+    </div>
+    <div class="media-object-section" style="width:80rem">
+        <h6>{{hotel.name}}</h6>
+        <p><img class="thumbnail" src="../../assets/images/icons/common/{{hotel.stars}}-stars.png" style="zoom: 6%"></p>
+        <div class="row" *ngFor="let amenitie of hotel['amenities']; let idx = index;"><img style="max-width: 7%;" src="../../assets/images/icons/amenities/{{amenitie}}.svg"></div>
+    </div>
+    <div class="media-object-section bottom" style="width:40rem">
+        <div class="p-small">Precio por noche por <br>habitación</div>
         <br>
-        <div class="feature-col">
-          Filtros
-        </div>
-        <ul class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
-          <li class="accordion-item" data-accordion-item>
-            <a href="#" class="accordion-title"><img src="../../assets/filters/search.svg"> Nombre del hotel</a>
-            <div class="accordion-content" data-tab-content>
-              <div class="medium-6 cell">
-                <input type="text" placeholder="Ingrese el nombre del hotel">
-              </div>
-              <div class="medium-6 cell">
-                <a class="button">Buscar</a>
-              </div>  
-            </div>
-          </li>
-          <li class="accordion-item" data-accordion-item>
-            <a href="#" class="accordion-title"> Estrellas</a>
-            <div class="accordion-content" data-tab-content>
-                <input id="checkbox3" type="checkbox"> Todas las estrellas
-                <br />
-                <input id="checkbox3" type="checkbox"> <img src="../../assets/filters/search.svg">
-                <br />
-                <input id="checkbox3" type="checkbox"> <img src="../../assets/filters/search.svg">
-                <br />
-                <input id="checkbox3" type="checkbox"> <img src="../../assets/filters/search.svg">
-                <br />
-                <input id="checkbox3" type="checkbox"> <img src="../../assets/filters/search.svg">
-                <br />
-                <input id="checkbox3" type="checkbox"> <img src="../../assets/filters/search.svg">
-            </div>
-          </li>
-          <!-- <li class="accordion-item" data-accordion-item>
-            <a href="#" class="accordion-title">Accordion 3, you can't open me.</a>
-            <div class="accordion-content" data-tab-content>
-              Panel 3. Lorem ipsum dolor
-            </div>
-          </li> -->
-        </ul>
-      </div>
-      <div class="cell medium-4 medium-cell-block-y">
-        <div class="row small-up-2 medium-up-3">
-          <div class="column row">
-            <br>
-            <div class="card">
-              <img src="http://placehold.it/600x300">
-              <div class="card-divider">
-                This is a header
-              </div>
-              <div class="card section">
-                <h4>This is a card</h4>
-                <p>IT is an easy to override visual style, and is appropriately subdued.</p>
-              </div>
-            </div>
+        <div class="grid-x grid-margin-x" style="text-align:center">
+          <div class="auto cell l-price">USD</div>
+          <div class="auto cell l-mount">{{hotel.price}}</div>
           </div>
+        <br>
+        <div class="l-button">
+          <a class="button">Ver hotel</a>
         </div>
     </div>
   </div>
 </div>
-
-<!-- <div class="row small-up-2 medium-up-3">
-  <div class="column">
-    <div class="card">
-      <img src="http://placehold.it/600x300">
-      <div class="card-divider">
-        This is a header
-      </div>
-      <div class="card section">
-        <h4>This is a card</h4>
-        <p>IT is an easy to override visual style, and is appropriately subdued.</p>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-<!-- <input [(ngModel)]="pipe" />
-{{ pipe }}
-<div *ngFor="let hotel of hotels">
-  {{ hotel.id }}
-  {{ hotel.name }}
-  {{ hotel.stars }}
-  {{ hotel.price }}
-  {{ hotel.image }}
-  {{ hotel.amenities }}
-</div> -->

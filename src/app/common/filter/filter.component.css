@@ -1,0 +1,26 @@
+.button{
+    background-color: #144481
+}
+
+.feature-col {
+    color: #144481;
+    padding-left: 1em;
+    padding-top: 2em;
+    padding-bottom: 0.1em;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.feature-font {
+    color: #157AB1;
+    font-weight: bolder;
+}
+
+.feature-star {
+    color: #144481;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+
+

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+//declare var $:any;
+
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
@@ -10,6 +12,7 @@ export class FilterComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  //  $(document).foundation();
   }
 
 }

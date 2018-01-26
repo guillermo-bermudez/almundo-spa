@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HotelsService } from '../services/hotels/hotels.service';
 import { hotel } from '../models/hotels/hotel.model';
 
-declare var $:any;
+
 
 @Component({
   selector: 'app-hotels-list',
@@ -20,7 +20,7 @@ export class HotelsListComponent implements OnInit {
 
   ngOnInit() {
 
-    $(document).foundation();
+    
 
     this.hotelService.getAllHotels().subscribe(data => {
       this.hotels = data;

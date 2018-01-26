@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HotelsService } from './services/hotels/hotels.service';
 import { FormsModule } from '@angular/forms';
 import { FilterComponent } from './common/filter/filter.component';
+import { HomeComponent } from './common/home/home.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { FilterComponent } from './common/filter/filter.component';
     AppComponent,
     HotelsListComponent,
     HeaderComponent,
-    FilterComponent
+    FilterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

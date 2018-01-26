@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-declare var $:any;
+//declare var $:any;
 
 @Component({
   selector: 'app-header',
@@ -11,7 +11,7 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    $(document).foundation();
+    //$(document).foundation();
   }
 
 }
