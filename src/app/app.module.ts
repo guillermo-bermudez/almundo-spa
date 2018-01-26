@@ -9,7 +9,7 @@ import { HeaderComponent } from './common/header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HotelsService } from './services/hotels/hotels.service';
 import { FormsModule } from '@angular/forms';
-import { FilterComponent } from './filter/filter.component';
+import { FilterComponent } from './common/filter/filter.component';
 
 
 @NgModule({
