@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedServiceService } from '../../services/shared/shared-service.service';
 
 //declare var $:any;
 
@@ -9,10 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilterComponent implements OnInit {
 
-  constructor() { }
+  nameHotel : string;
+
+  
+
+  constructor(private sharedService: SharedServiceService) { }
 
   ngOnInit() {
   //  $(document).foundation();
+  }
+
+  onClickSearch() {
+    this.sharedService.setHotelsbyName(this.nameHotel);
   }
 
 }

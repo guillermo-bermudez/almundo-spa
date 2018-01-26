@@ -1,29 +1,27 @@
 
-    <!-- <div *ngFor="let hotel of hotels">
-        {{hotel.name}}
-    </div> -->
-
-<div *ngFor="let hotel of hotels" class="tabs-panel is-active" id="panelHotelList">
-  <div class="media-object">
-    <div class="media-object-section middle">
-        <img class="thumbnail" src="../../assets/images/hotels/{{hotel.image}}">
-    </div>
-    <div class="media-object-section" style="width:80rem">
-        <h6>{{hotel.name}}</h6>
-        <p><img class="thumbnail" src="../../assets/images/icons/common/{{hotel.stars}}-stars.png" style="zoom: 6%"></p>
-        <div class="row" *ngFor="let amenitie of hotel['amenities']; let idx = index;"><img style="max-width: 7%;" src="../../assets/images/icons/amenities/{{amenitie}}.svg"></div>
-    </div>
-    <div class="media-object-section bottom" style="width:40rem">
-        <div class="p-small">Precio por noche por <br>habitación</div>
-        <br>
-        <div class="grid-x grid-margin-x" style="text-align:center">
-          <div class="auto cell l-price">USD</div>
-          <div class="auto cell l-mount">{{hotel.price}}</div>
+  <div *ngFor="let hotel of hotels; let idx = index;" class="tabs-panel is-active" id="panelHotelList">
+    <div class="media-object">
+      <div class="media-object-section middle">
+          <img class="thumbnail" src="../../assets/images/hotels/{{hotel.image}}">
+      </div>
+      <div class="media-object-section" style="width:80rem">
+          <h6>{{hotel.name}}</h6>
+          <p><img class="thumbnail" src="../../assets/images/icons/common/{{hotel.stars}}-stars.png" style="zoom: 6%"></p>
+          <div class="row" *ngFor="let amenitie of hotel['amenities']; let idx = index;">
+            <img style="max-width: 7%;" alt="{{amenitie}}" src="../../assets/images/icons/amenities/{{amenitie}}.svg">
           </div>
-        <br>
-        <div class="l-button">
-          <a class="button">Ver hotel</a>
-        </div>
+      </div>
+      <div class="media-object-section bottom" style="width:40rem">
+          <div class="p-small">Precio por noche por <br>habitación</div>
+          <br>
+          <div class="grid-x grid-margin-x" style="text-align:center">
+            <div class="auto cell l-price">USD</div>
+            <div class="auto cell l-mount">{{hotel.price}}</div>
+            </div>
+          <br>
+          <div class="l-button">
+            <a class="button">Ver hotel</a>
+          </div>
+      </div>
     </div>
   </div>
-</div>

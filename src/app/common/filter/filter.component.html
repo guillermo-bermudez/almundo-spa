@@ -7,10 +7,10 @@
           <a href="#" class="accordion-title feature-font"><img src="../../assets/images/icons/filters/search.svg" style="max-width: 4.2%;"> Nombre del hotel</a>
           <div class="accordion-content" data-tab-content>
             <div class="medium-6 cell">
-              <input type="text" placeholder="Ingrese el nombre del hotel">
+              <input [(ngModel)]="nameHotel" type="text" placeholder="Ingrese el nombre del hotel">
             </div>
             <div class="medium-6 cell">
-              <a class="button">Buscar</a>
+              <div (click)="onClickSearch()" class="button">Buscar</div>
             </div>
           </div>
         </li>

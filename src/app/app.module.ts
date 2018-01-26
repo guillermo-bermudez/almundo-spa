@@ -11,6 +11,7 @@ import { HotelsService } from './services/hotels/hotels.service';
 import { FormsModule } from '@angular/forms';
 import { FilterComponent } from './common/filter/filter.component';
 import { HomeComponent } from './common/home/home.component';
+import { SharedServiceService } from './services/shared/shared-service.service';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { HomeComponent } from './common/home/home.component';
   ],
   providers: [
     HotelsService,
+    SharedServiceService
   ],
   bootstrap: [AppComponent]
 })
