@@ -13,6 +13,8 @@ export class HotelsListComponent implements OnInit {
   public hotels : hotel[] = [];
   //pipe : string = "hola mundo"
 
+  hotelsByFilter
+
   nameHotel : string;
 
   constructor(
@@ -30,8 +32,21 @@ export class HotelsListComponent implements OnInit {
     this.sharedService.getHotelsbyName().subscribe(data => {
       this.nameHotel = data;
       namedHotel = data;
+      // debugger;
 
-      console.log(namedHotel)
+      this.hotelService.getAllHotels().subscribe(data => {
+        let algo = this.nameHotel
+        
+        this.hotels = (data.filter(hotel => {
+          console.log(algo)
+          return hotel.name.indexOf(algo, -1)
+        }))
+
+      });
+      // debugger;
+      // console.log(this.hotels.map(hotel => {
+      //   hotel.id = 15102
+      // }))
       //this.hotels = (this.hotels.filter(hotel => hotel.name === (name)))
     });
 
@@ -41,8 +56,9 @@ export class HotelsListComponent implements OnInit {
       // filterO.map(hotel => {
       //   hotel.name.includes(namedHotel)
       // })
-
+      //console.log(data)
       this.hotels = data
+
     })
   }
 
