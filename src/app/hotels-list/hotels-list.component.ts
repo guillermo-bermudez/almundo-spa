@@ -40,7 +40,6 @@ export class HotelsListComponent implements OnInit {
         return hotel.name.match(regex) 
       });
       
-      //console.log(f[0].starsH[0].split(','))
       if (f[0].starsH[0].split(',')[0] === 'false') {
         const five = f[0].starsH[0].split(',')[1] === 'true' ? true : false
         const four = f[0].starsH[0].split(',')[2] === 'true' ? true : false
@@ -56,37 +55,12 @@ export class HotelsListComponent implements OnInit {
       }
 
       this.hotels = arr
-      //console.log(this.result)
-      // this.hotelService.getAllHotels().subscribe(data => {
-
-      //   let arr = data.filter(hotel => {
-      //     let regex = new RegExp(f[0].nameH, 'gi')
-      //     if (f[0].nameH === '')
-      //       return true
-      //     return hotel.name.match(regex) 
-      //   });
-
-      //   console.log(f[0].starsH[0].split(','))
-
-      //   if (f[0].starsH[0].split(',')[0] === 'false') {
-      //     const five = 
-      //     arr = arr.filter(hotel => {
-
-      //     })
-      //   }
-      //   this.hotels = arr
-      //   // this.hotels = arr.filter(hotel => {
-      //   //   let s = f[0].starsH
-      //     //return hotel.stars === (s[1] ===  || hotel.stars === s[2] 
-      //   //})
-      // });
-      // console.log(this.hotels)
+      
     })
 
     this.hotelService.getAllHotels().subscribe(data => {
       this.result = data
       this.hotels = data
-      console.log(this.hotels)
     })
   }
 

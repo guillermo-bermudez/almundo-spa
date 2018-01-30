@@ -39,7 +39,11 @@ export class FilterComponent implements OnInit {
     else if (!this.fiveStars || !this.fourStars || !this.threeStars || !this.twoStars || !this.oneStars)
       this.allStars = false
     
-    this.filterH.push({ nameH: this.nameHotel, starsH: [`${this.allStars},${this.fiveStars},${this.fourStars},${this.threeStars},${this.twoStars},${this.oneStars}`] })
+    this.filterH.push({ 
+      nameH: this.nameHotel, 
+      starsH: [`${this.allStars},${this.fiveStars},${this.fourStars},${this.threeStars},${this.twoStars},${this.oneStars}`] 
+    })
+    
     this.sharedService.setFilterObject(this.filterH);
   }
 

@@ -18,8 +18,9 @@ export class HotelsService {
     return this.http.get(environment.getAllHotels).map((data: any) => data);
   }
 
-  getAllHotelsWithFilters(filter: Filter) : Observable<any> {
-    return this.http.get(environment.getAllHotels).map((data: any) => data);
-  }
+  // TODO: filter with entire params :D
+  // getAllHotelsWithFilters(filter: Filter) : Observable<any> {
+  //   return this.http.get(environment.getAllHotels).map((data: any) => data);
+  // }
 
 }
