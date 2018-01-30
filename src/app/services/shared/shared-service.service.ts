@@ -1,18 +1,24 @@
-import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs/Subject';
+import { Injectable } from '@angular/core'
+import { Subject } from 'rxjs/Subject'
+import { Filter } from '../../models/filter/filter.model'
 
 @Injectable()
 export class SharedServiceService {
-  nameFilterExport: Subject<any> = new Subject<any>();
+  
+  filterExport: Subject<any> = new Subject<any>();
 
   constructor() { }
 
-  getHotelsbyName() {
-    return this.nameFilterExport;
+  // getHotelsbyName() {
+  //   return this.nameFilterExport;
+  // }
+
+  getFilterObject() {
+    return this.filterExport;
   }
 
-  setHotelsbyName(name: string) {
-    return this.nameFilterExport.next(name);
+  setFilterObject(filterObject: Filter[]) {
+    return this.filterExport.next(filterObject);
   }
 
 }

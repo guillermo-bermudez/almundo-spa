@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 
 import { environment } from '../../../environments/environment'
+import { Filter } from '../../models/filter/filter.model'
 
 @Injectable()
 export class HotelsService {
@@ -14,7 +15,11 @@ export class HotelsService {
   }
 
   getAllHotels() : Observable<any> {
-    return this.http.get(environment.geAllHotels).map((data: any) => data);
+    return this.http.get(environment.getAllHotels).map((data: any) => data);
+  }
+
+  getAllHotelsWithFilters(filter: Filter) : Observable<any> {
+    return this.http.get(environment.getAllHotels).map((data: any) => data);
   }
 
 }

@@ -5,5 +5,6 @@
 
 export const environment = {
   production: false,
-  geAllHotels: 'http://localhost:3000/api/hotels'
+  getAllHotels: 'http://localhost:3000/api/hotels',
+  getAllHotelsWithFilters: 'http://localhost:3000/api/hotels/'
 };

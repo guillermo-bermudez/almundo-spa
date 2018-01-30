@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HotelsService } from '../services/hotels/hotels.service';
-import { hotel } from '../models/hotels/hotel.model';
+import { Hotel } from '../models/hotels/hotel.model';
+import { Filter } from '../models/filter/filter.model';
 import { SharedServiceService } from '../services/shared/shared-service.service';
 
 @Component({
@@ -10,10 +11,12 @@ import { SharedServiceService } from '../services/shared/shared-service.service'
 })
 export class HotelsListComponent implements OnInit {
 
-  public hotels : hotel[] = [];
-  //pipe : string = "hola mundo"
+  public hotels : Hotel[] = [];
+  public filters : Filter[] = [];
 
-  hotelsByFilter
+  public result : Hotel[] = [];
+
+  //hotelsByFilter
 
   nameHotel : string;
 
@@ -27,38 +30,63 @@ export class HotelsListComponent implements OnInit {
 
     let namedHotel : string = '';
 
-    let filterO : hotel[] = []
+    this.sharedService.getFilterObject().subscribe((filter: Filter[]) => {
+      let f = filter
 
-    this.sharedService.getHotelsbyName().subscribe(data => {
-      this.nameHotel = data;
-      namedHotel = data;
-      // debugger;
-
-      this.hotelService.getAllHotels().subscribe(data => {
-        let algo = this.nameHotel
-        
-        this.hotels = (data.filter(hotel => {
-          console.log(algo)
-          return hotel.name.indexOf(algo, -1)
-        }))
-
+      let arr = this.result.filter(hotel => {
+        let regex = new RegExp(f[0].nameH, 'gi')
+        if (f[0].nameH === '')
+          return true;
+        return hotel.name.match(regex) 
       });
-      // debugger;
-      // console.log(this.hotels.map(hotel => {
-      //   hotel.id = 15102
-      // }))
-      //this.hotels = (this.hotels.filter(hotel => hotel.name === (name)))
-    });
+      
+      //console.log(f[0].starsH[0].split(','))
+      if (f[0].starsH[0].split(',')[0] === 'false') {
+        const five = f[0].starsH[0].split(',')[1] === 'true' ? true : false
+        const four = f[0].starsH[0].split(',')[2] === 'true' ? true : false
+        const three = f[0].starsH[0].split(',')[3] === 'true' ? true : false
+        const two = f[0].starsH[0].split(',')[4] === 'true' ? true : false
+        const one = f[0].starsH[0].split(',')[5] === 'true' ? true : false
+
+        arr = arr.filter(hotel => {
+          return hotel.stars == (five ? 5 : undefined) || hotel.stars == (four ? 4 : undefined) ||
+           hotel.stars == (three ? 3 : undefined) || hotel.stars == (two ? 2 : undefined) ||
+           hotel.stars == (one ? 1 : undefined)
+        })
+      }
+
+      this.hotels = arr
+      //console.log(this.result)
+      // this.hotelService.getAllHotels().subscribe(data => {
+
+      //   let arr = data.filter(hotel => {
+      //     let regex = new RegExp(f[0].nameH, 'gi')
+      //     if (f[0].nameH === '')
+      //       return true
+      //     return hotel.name.match(regex) 
+      //   });
+
+      //   console.log(f[0].starsH[0].split(','))
+
+      //   if (f[0].starsH[0].split(',')[0] === 'false') {
+      //     const five = 
+      //     arr = arr.filter(hotel => {
+
+      //     })
+      //   }
+      //   this.hotels = arr
+      //   // this.hotels = arr.filter(hotel => {
+      //   //   let s = f[0].starsH
+      //     //return hotel.stars === (s[1] ===  || hotel.stars === s[2] 
+      //   //})
+      // });
+      // console.log(this.hotels)
+    })
 
     this.hotelService.getAllHotels().subscribe(data => {
-      let filterO : hotel[] = []
-
-      // filterO.map(hotel => {
-      //   hotel.name.includes(namedHotel)
-      // })
-      //console.log(data)
+      this.result = data
       this.hotels = data
-
+      console.log(this.hotels)
     })
   }
 
